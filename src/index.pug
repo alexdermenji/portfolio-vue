@@ -9,7 +9,95 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      header.header
+        .header__logo 
+        | AD
+        .header__menu
+          nav.menu 
+            ul.menu__list
+              each item in ['About me','Skills','My Projects','Reviews']
+                li.menu__item
+                  a(href='') #{item}
+        .header__socials 
+          ul.socials__list
+            each item in ['insta','github','vk','message']
+              li.socials__item 
+                +icon(item,'socials__icon')
+      main.content
+        .hero
+          .hero__body
+            .hero__description 
+            | Personal site of web developer
+            .hero__title  
+              h1.hero__name 
+              | Alexande Dermenji
+          .hero__scroll
+          | Scroll 
+          span.hero__scroll-arrow 
+          | >>
+        section.about
+          .about__left
+            .about__img
+              +image('content/alex.jpg', 'about__pic')
+            .about__data 
+              ul.about__data-left
+                each item in ['based in','age','born']
+                  li.about__data-leftitem
+                  | #{item}
+              ul.about__data-right
+                each item in ['Rugby, England','34','25.09.1986']
+                  li.about__data-rightitem
+                  | #{item}
+          .about__right
+             p.about__text
+             |   Hi, my name is
+             h2.about__name 
+             | Alexandr Dermenji
+             p.about__text
+             | I am developing modern websites and applications. I like doing interesting and modern projects.
+             p.about__note 
+             | I made this site as part of my studies at the LoftSchool. I'll refresh my content in it a bit later. In the meantime, look how cool and beautiful everything is here!
+        section.skills
+          h2.skills__title
+          | How can I help?
+          .skills__text 
+          | I use all modern technologies in my projects.
+
+          .skills__groups
+            .skills__frontend
+              h3.skills__groups-title
+              | Frontend
+              ul.skills__list
+                each item in ['HTML5','CSS','JavaScript', 'Jquery', 'Vue.JS']
+                  li.skills__item
+                  | #{item}
+            .skills__workflow
+             h2.skills__groups-title
+             | Workflow
+             ul.skills__list
+                each item in ['GIT','Terminal','Gulp', 'Webpack']
+                  li.skills__item
+                  | #{item}
+        section.projects
+          .projects__slider
+            +image('content/1.jpg', 'projects__pic')
+            ul.projects__list
+                each item in ['GIT','Terminal','Gulp', 'Webpack']
+                  li.projects__item
+                    +image('content/1.jpg', 'projects__pic')
+            .projects__controls 
+              .project__controls-up >
+              .project__controls-up <
+          .projects__description 
+            ul.projects__skills-list
+                each item in ['HTML','CSS','JavaScript']
+                  li.projects__skills-item
+                  | #{item}
+            h2.projects__title Web project of online-school
+            .projects__description-text 
+            | Nice project with modern design
+            a.projects__description-link Посмотреть сайт
+            
+          
+          
+          .icon-bg
