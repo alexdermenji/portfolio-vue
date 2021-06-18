@@ -1,0 +1,99 @@
+.projects {
+  padding-bottom: 100px;
+  &__title {
+    margin-bottom: 83px;
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__slider {
+    width: 55%;
+    position: relative;
+    max-height: 360px;
+    &:before {
+      content: attr(data-slide);
+      position: absolute;
+      top: 2%;
+      line-height: 1;
+      font-size: 400px;
+      right: 0;
+      font-weight: 800;
+      z-index: -1;
+      color: rgba($text-color, 0.5);
+      transform: translateX(60%);
+    }
+  }
+  &__description {
+    width: 30%;
+  }
+  &__thumbs {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+  }
+
+  &__pic {
+    width: 100%;
+    height: 100%;
+  }
+  &__controls {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    &-up {
+      .projects__arrow {
+        transform: rotate(90deg);
+      }
+    }
+    &-down {
+      .projects__arrow {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  &__btns {
+    width: 35px;
+    height: 35px;
+    position: relative;
+
+    display: block;
+    background-color: #333c49;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #fff;
+      display: block;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  &__skills-list {
+    display: flex;
+    margin-bottom: 35px;
+  }
+  &__skills-item {
+    margin-right: 8px;
+  }
+  &__name {
+    width: 60%;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 41px;
+    margin-bottom: 35px;
+  }
+  &__description-text {
+    font-weight: 600;
+    line-height: 30px;
+    color: rgba(51, 60, 73, 0.8);
+    margin-bottom: 46px;
+  }
+  &__arrow {
+    fill: #fff;
+    width: 10px;
+  }
+}

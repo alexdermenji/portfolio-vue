@@ -1,1 +1,1 @@
-export {default} from "./notification.vue";
+export { default } from "./notification.vue";

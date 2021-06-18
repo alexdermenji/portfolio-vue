@@ -1,0 +1,27 @@
+.skill {
+  position: relative;
+  width: 166px;
+  height: 166px;
+  &__circle {
+    fill: transparent;
+    &--under {
+      stroke: #eaeaea;
+      stroke-width: 5px;
+    }
+    &--above {
+      stroke-width: 12px;
+      stroke-dasharray: 251;
+      stroke-dashoffset: 5;
+    }
+    &-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: 18px;
+      color: rgba($text-color, 0.5);
+      padding: 14px;
+    }
+  }
+}
