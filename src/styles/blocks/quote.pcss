@@ -1,9 +1,24 @@
 .quote {
-  padding-left: 24%;
+  position: relative;
+  padding-left: 20%;
   font-weight: 600;
   font-size: 16px;
   line-height: 30px;
+  &:before {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    display: block;
+    width: 76px;
+    height: 60px;
+    content: "";
+    /* background-image: url("../images/icons/quote.svg"); */
+    background: svg-load("quote.svg", fill=#DDE3EC) center center / contain
+      no-repeat;
+    fill: black;
+  }
   &__text {
     margin-bottom: 31px;
+    display: flex;
   }
 }

@@ -1,13 +1,17 @@
 .user-display {
   display: flex;
   &__avatar-style {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
     width: 75px;
     height: 75px;
     margin-right: 31px;
   }
   &-pic {
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 100%;
+    height: auto;
   }
   &__name {
     font-weight: bold;

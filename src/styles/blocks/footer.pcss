@@ -20,6 +20,7 @@
     margin-bottom: 24px;
   }
   &__name {
+    width: 50%;
     font-weight: bold;
     font-size: 18px;
     line-height: 30px;
@@ -28,24 +29,32 @@
     margin-bottom: 18px;
   }
   &__title {
+    width: 70%;
     font-size: 16px;
     line-height: 30px;
   }
   &__nav {
-    width: 70%;
+    width: 75%;
+    padding-top: 20px;
   }
   &__menu {
     color: #fff;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
+    .menu__link:hover {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+    }
   }
   &__left {
-    margin-right: 25px;
+    margin-right: 110px;
   }
   &__note {
-    margin-bottom: 30px;
+    line-height: 30px;
+    margin-bottom: 37px;
     color: rgba(255, 255, 255, 0.45);
   }
   &__quote {
+    line-height: 30px;
     color: rgba(255, 255, 255, 0.45);
     &-text {
       margin-bottom: 27px;
@@ -59,6 +68,9 @@
     display: flex;
   }
   &__socials {
+    .socials__item {
+      margin-right: 25px;
+    }
     .socials__link {
       display: block;
       text-align: center;
@@ -67,6 +79,13 @@
       padding: 10px;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
+      &:hover,
+      &:active {
+        border: 1px solid rgba(#fff, 1);
+        .socials__icon {
+          fill: #fff;
+        }
+      }
     }
     .socials__icon {
       fill: rgba(255, 255, 255, 0.3);

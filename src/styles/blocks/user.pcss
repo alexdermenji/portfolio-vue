@@ -1,15 +1,24 @@
 .user {
   display: flex;
   flex-direction: column;
+
   &__img {
-    text-align: center;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
     width: 200px;
     height: 200px;
-    margin-bottom: 72px;
+    margin-bottom: 84px;
     align-self: center;
+    border-radius: 50%;
   }
   &__pic {
-    border-radius: 50%;
+    width: auto;
+    height: 100%;
+  }
+
+  &__data-title {
+    padding: 5px 0;
   }
 
   &__data-title {
@@ -17,7 +26,7 @@
     line-height: 30px;
     &:first-child {
       color: rgba(70, 78, 98, 0.5);
-      min-width: 180px;
+      min-width: 90px;
     }
   }
 }

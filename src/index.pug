@@ -15,7 +15,7 @@ block content
                   a(href='').menu__link #{item}
           .header__socials 
             ul.socials__list.socials
-              each item in ['insta','github','vk','message']
+              each item in ['insta','github','vk','envelope']
                 li.socials__item 
                   a(href='#').socials__link
                     +icon(item,'socials__icon')
@@ -55,7 +55,7 @@ block content
     section.values
       .container
         h2.values__title How can I help?
-        .values__text I use all modern technologies in my projects. React, Vue, TypeScript
+        .values__text I use all modern technologies in my projects. React, Vue, TypeScript I use all modern technologies in my projects. React, Vue, TypeScript I use all modern technologies in my projects. React, Vue, TypeScript 
 
         .skills
             ul.skills__list
@@ -88,21 +88,19 @@ block content
                       +image(`content/${item}.jpg`, 'projects__pic')
             .projects__controls 
               button(type="button").projects__btns.projects__controls-up
-                +icon('arrow-down','projects__arrow')
+                +icon('arrow-down','projects__arrow projects__arrow--inactive')
 
               button(type="button").projects__btns.projects__controls-down
-                +icon('arrow-down','projects__arrow')
+                +icon('arrow-down','projects__arrow projects__arrow--active')
           .projects__description 
             ul.projects__skills-list
                 each item in ['HTML','CSS','JavaScript']
                   li.projects__skills-item 
                     .tag #{item}
             h2.projects__name Website of online school
-            .projects__description-text Nice project with modern design. Nice colors, great functionality
+            .projects__description-text Nice project with modern design. Nice colors, great functionality Nice project with modern design. Nice colors, great functionality
             
-            a.iconed-link 
-              +icon('link','iconed-icon')
-              span Visit website
+            a.iconed-link Visit website
     .triangles.triangles__bottom
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
         polygon(points="0,0 0,100 1000,100")
@@ -121,13 +119,14 @@ block content
           ul.slider__content
             li.slider__item
               .quote
+                
                 .quote__text 
                   p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
                 .quote__user 
                   .user-display
                     .user-display__avatar
                       .user-display__avatar-style 
-                        +image('content/alex.jpg', 'user-display-pic')
+                        +image('content/review1.jpg', 'user-display-pic')
                     .user-display__data
                       .user-display__name Dan Asare 
                       .user-display__title Web designer 
@@ -139,7 +138,7 @@ block content
                   .user-display
                     .user-display__avatar
                       .user-display__avatar-style 
-                        +image('content/alex.jpg', 'user-display-pic')
+                        +image('content/review2.jpg', 'user-display-pic')
                     .user-display__data
                       .user-display__name Dan Asare 
                       .user-display__title Project manager
@@ -168,5 +167,5 @@ block content
                         +icon(item,'socials__icon')
 
           .footer__quote
-            p.footer__quote-text “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” 
+            p.footer__quote-text “Any fool can write code that a computer can understand. Good programmers write code that humans can understand. humans can understand” 
             .footer__author Martin Fowler

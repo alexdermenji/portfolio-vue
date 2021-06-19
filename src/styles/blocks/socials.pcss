@@ -8,9 +8,19 @@
     }
   }
 
+  &__link {
+    transition: border 0.5s;
+  }
   &__icon {
     width: 25px;
     height: 25px;
     fill: $text-color;
+    transition: fill 0.5s;
+  }
+  &__link:hover,
+  &__link:active {
+    .socials__icon {
+      fill: #5500f2;
+    }
   }
 }

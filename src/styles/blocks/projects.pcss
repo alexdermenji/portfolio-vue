@@ -1,7 +1,8 @@
 .projects {
+  padding-top: 255px;
   padding-bottom: 100px;
   &__title {
-    margin-bottom: 83px;
+    margin-bottom: 88px;
   }
   &__body {
     display: flex;
@@ -9,9 +10,9 @@
   }
 
   &__slider {
-    width: 55%;
+    width: 59%;
     position: relative;
-    max-height: 360px;
+    max-height: 390px;
     &:before {
       content: attr(data-slide);
       position: absolute;
@@ -26,13 +27,24 @@
     }
   }
   &__description {
-    width: 30%;
+    padding-top: 11px;
+    width: 29%;
   }
   &__thumbs {
     position: absolute;
     right: 0;
     bottom: 0;
     width: 20%;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid #dc9322;
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
   }
 
   &__pic {
@@ -46,22 +58,27 @@
     right: 0;
     &-up {
       .projects__arrow {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
       }
     }
     &-down {
       .projects__arrow {
-        transform: rotate(-90deg);
+        transform: rotate(90deg);
       }
     }
   }
+
   &__btns {
     width: 35px;
     height: 35px;
     position: relative;
-
     display: block;
     background-color: #333c49;
+    &:hover {
+      .projects__arrow {
+        fill: #fff;
+      }
+    }
     &:before {
       position: absolute;
       top: 50%;
@@ -74,7 +91,7 @@
 
   &__skills-list {
     display: flex;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
   &__skills-item {
     margin-right: 8px;
@@ -84,7 +101,7 @@
     font-weight: bold;
     font-size: 30px;
     line-height: 41px;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
   &__description-text {
     font-weight: 600;
@@ -95,5 +112,11 @@
   &__arrow {
     fill: #fff;
     width: 10px;
+    &--active {
+      fill: #717883;
+    }
+    &--inactive {
+      fill: #464e62;
+    }
   }
 }

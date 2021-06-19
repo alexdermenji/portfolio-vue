@@ -1,8 +1,21 @@
 .iconed-link {
+  position: relative;
   color: #586ed3;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
+  padding-left: 30px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    content: "";
+    background: svg-load("link.svg" fill=#586ED3);
+  }
 }
 
 .iconed-icon {
