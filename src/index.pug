@@ -15,10 +15,18 @@ block content
                   a(href='').menu__link #{item}
           .header__socials 
             ul.socials__list.socials
-              each item in ['insta','github','vk','envelope']
+              -
+                var soc = [
+                  {link: '//instagram.com', icon: 'insta'},
+                  {link: '//github.com', icon: 'github'},
+                  {link: '//vk.com', icon: 'vk'},
+                  {link: '//mail.ru', icon: 'envelope'}
+                  ]
+
+              each item in soc
                 li.socials__item 
-                  a(href='#').socials__link
-                    +icon(item,'socials__icon')
+                  a(href=item.link target="_blank").socials__link
+                    +icon(item.icon,'socials__icon')
         .hero__body
           .hero__description Personal site of web developer
           .hero__title  
@@ -53,13 +61,26 @@ block content
       svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
         polygon(points="0,100 1000,100 1000,0")  
     section.values
-      .container
+      .container.values__container
         h2.values__title How can I help?
         .values__text I use all modern technologies in my projects. React, Vue, TypeScript I use all modern technologies in my projects. React, Vue, TypeScript I use all modern technologies in my projects. React, Vue, TypeScript 
 
         .skills
             ul.skills__list
-              each item in [["Frontend", ["HTML5", "CSS3", "Javascript", "Vue.js"]],["Workflow", ["GIT", "Terminal", "Gulp", "Webpack"]]]
+              -
+                var skills = [
+                  ["Frontend", [
+                    {tech: "HTML5", level: 95}, 
+                    {tech: "CSS3", level: 50},
+                    {tech: "Javascript", level: 60}, 
+                    {tech: "Vue.js", level: 70}]],
+                  ["Workflow", [
+                    {tech: "GIT", level: 70}, 
+                    {tech: "Terminal", level: 80}, 
+                    {tech: "Gulp", level: 70}, 
+                    {tech: "Webpack", level: 67}]]
+                  ]
+              each item in skills
                 li.skills__item
                   .skills__row
                     .skills__row-title #{item[0]}
@@ -73,7 +94,7 @@ block content
                               linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
                                 stop(offset="0%" stop-color="#5500f2")
                                 stop(offset="100%" stop-color="#8f00ef")
-                            .skill__circle-text #{skill}
+                            .skill__circle-text #{skill.tech}
     section.projects
       .container
         .projects__title
@@ -85,7 +106,8 @@ block content
               ul.projects__list
                   each item in ['1','2','3','4']
                     li.projects__item
-                      +image(`content/${item}.jpg`, 'projects__pic')
+                      a(href='#').projects__item-link
+                        +image(`content/${item}.jpg`, 'projects__pic')
             .projects__controls 
               button(type="button").projects__btns.projects__controls-up
                 +icon('arrow-down','projects__arrow projects__arrow--inactive')
@@ -123,25 +145,25 @@ block content
                 .quote__text 
                   p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
                 .quote__user 
-                  .user-display
-                    .user-display__avatar
-                      .user-display__avatar-style 
-                        +image('content/review1.jpg', 'user-display-pic')
-                    .user-display__data
-                      .user-display__name Dan Asare 
-                      .user-display__title Web designer 
+                  .client
+                    .client__avatar
+                      .client__avatar-style 
+                        +image('content/review1.jpg', 'client-pic')
+                    .client__data
+                      .client__name Dan Asare 
+                      .client__title Web designer 
             li.slider__item
               .quote
                 .quote__text 
                   p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
                 .quote__user 
-                  .user-display
-                    .user-display__avatar
-                      .user-display__avatar-style 
-                        +image('content/review2.jpg', 'user-display-pic')
-                    .user-display__data
-                      .user-display__name Dan Asare 
-                      .user-display__title Project manager
+                  .client
+                    .client__avatar
+                      .client__avatar-style 
+                        +image('content/review2.jpg', 'client-pic')
+                    .client__data
+                      .client__name Dan Asare 
+                      .client__title Project manager
   footer.footer 
     .container.footer__container 
       .footer__about   
@@ -161,10 +183,10 @@ block content
              .footer__note This project was made during education in Loftschool
              .footer__socials
                 ul.socials__list.socials
-                  each item in ['insta','vk','github','envelope']
+                  each item in soc
                     li.socials__item 
-                      a(href='#').socials__link
-                        +icon(item,'socials__icon')
+                      a(href=item.link target="_blank").socials__link
+                        +icon(item.icon,'socials__icon')
 
           .footer__quote
             p.footer__quote-text “Any fool can write code that a computer can understand. Good programmers write code that humans can understand. humans can understand” 

@@ -1,8 +1,17 @@
 .values {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding-top: 96px;
   background: url("~images/bg/backpack.jpg") no-repeat;
   background-position: left;
   background-size: 40%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   &__title {
     font-weight: bold;

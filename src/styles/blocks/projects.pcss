@@ -1,6 +1,8 @@
 .projects {
-  padding-top: 255px;
-  padding-bottom: 100px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
   &__title {
     margin-bottom: 88px;
   }
@@ -37,13 +39,18 @@
     width: 20%;
   }
 
-  &__item {
+  &__item-link {
+    display: block;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:active {
       border: 2px solid #dc9322;
       margin-top: -1px;
       margin-bottom: -1px;
+    }
+    &:focus {
+      outline: 2px solid #586ed3;
     }
   }
 
@@ -74,10 +81,14 @@
     position: relative;
     display: block;
     background-color: #333c49;
-    &:hover {
+    &:hover,
+    &:active {
       .projects__arrow {
         fill: #fff;
       }
+    }
+    &:focus {
+      outline: 2px solid #586ed3;
     }
     &:before {
       position: absolute;

@@ -4,14 +4,19 @@
   font-weight: 600;
   display: flex;
   position: relative;
-  &:hover {
+  padding-right: 20px;
+  &:hover,
+  &:active {
     text-decoration: underline;
+  }
+  &:focus {
+    outline: 2px solid #586ed3;
   }
 
   &:after {
     position: absolute;
     top: 5px;
-    right: -20px;
+    right: -5px;
     width: 20px;
     height: 20px;
     display: block;
