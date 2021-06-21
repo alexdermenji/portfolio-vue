@@ -8,6 +8,8 @@ block content
           .header__logo
             a.logo(href='#') AD
 
+
+          
           nav.menu 
             ul.menu__list
               each item in ['About me','Skills','My Projects','Reviews']
@@ -27,6 +29,10 @@ block content
                 li.socials__item 
                   a(href=item.link target="_blank").socials__link
                     +icon(item.icon,'socials__icon')
+          div.hamburger-btn
+            .hamburger-btn__line
+            .hamburger-btn__line
+            .hamburger-btn__line           
         .hero__body
           .hero__description Personal site of web developer
           .hero__title  

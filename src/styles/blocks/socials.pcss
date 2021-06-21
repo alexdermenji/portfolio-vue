@@ -1,8 +1,14 @@
 .socials {
   display: flex;
+  @include tablets {
+    padding-top: 12px;
+  }
 
   &__item {
     margin-right: 35px;
+    @include tablets {
+      margin-right: 45px;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -12,6 +18,10 @@
     transition: border 0.5s;
   }
   &__icon {
+    @include tablets {
+      width: 30px;
+      height: 30px;
+    }
     width: 25px;
     height: 25px;
     fill: $text-color;
