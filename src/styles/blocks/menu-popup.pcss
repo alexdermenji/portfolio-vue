@@ -1,0 +1,36 @@
+.menu-popup {
+  @include tablets {
+    display: flex;
+  }
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  width: 40%;
+  height: 100vh;
+  background: #fff;
+  padding-left: 51px;
+  .menu {
+    height: auto;
+    margin-bottom: 92px;
+  }
+  .menu__list {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .menu__link {
+    height: auto;
+  }
+  .menu__item {
+    height: auto;
+    margin-bottom: 23px;
+    margin-right: 0;
+    &:last-child {
+      margin-bottom: 23px;
+    }
+  }
+}

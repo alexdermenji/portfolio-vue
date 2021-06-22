@@ -5,6 +5,9 @@
   font-size: 16px;
   line-height: 30px;
   &:before {
+    @include tablets {
+      left: -10px;
+    }
     position: absolute;
     top: 20px;
     left: 0;
@@ -12,7 +15,6 @@
     width: 76px;
     height: 65px;
     content: "";
-    /* background-image: url("../images/icons/quote.svg"); */
     background: svg-load("quote.svg", fill=#DDE3EC) center center / contain
       no-repeat;
     fill: black;

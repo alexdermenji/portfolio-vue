@@ -1,9 +1,12 @@
 .slider {
   &__header {
-    padding-right: 50%;
     margin-bottom: 78px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    @include tablets {
+      padding-right: 0;
+      justify-content: flex-start;
+    }
   }
   &__btn {
     margin-right: 10px;
@@ -11,9 +14,21 @@
       margin-right: 0;
     }
   }
+  &__btns {
+    display: flex;
+  }
   &__content {
     display: flex;
     padding-right: 12%;
+    @include tablets {
+      padding-right: 0;
+    }
+  }
+  &__title {
+    margin-right: 113px;
+    @include tablets {
+      margin-right: 30px;
+    }
   }
   &__item {
     width: 50%;

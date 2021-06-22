@@ -6,11 +6,18 @@
   background: url("~images/bg/backpack.jpg") no-repeat;
   background-position: left;
   background-size: 40%;
+  @include tablets {
+    background-position: bottom;
+    padding-bottom: 370px;
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include tablets {
+      align-items: center;
+    }
   }
 
   &__title {
@@ -18,6 +25,9 @@
     font-size: 30px;
     text-align: center;
     margin-bottom: 48px;
+    @include tablets {
+      margin-bottom: 30px;
+    }
   }
   &__text {
     line-height: 30px;
@@ -26,5 +36,10 @@
     text-align: center;
     margin-bottom: 100px;
     font-weight: 600;
+    @include tablets {
+      max-width: 60%;
+      padding-left: 0;
+      margin-bottom: 46px;
+    }
   }
 }

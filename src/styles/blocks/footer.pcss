@@ -12,6 +12,9 @@
     width: 20%;
     display: flex;
     flex-direction: column;
+    @include tablets {
+      width: 25%;
+    }
   }
   &__year {
     font-weight: 600;
@@ -47,6 +50,9 @@
   }
   &__left {
     margin-right: 110px;
+    @include tablets {
+      margin-right: 0;
+    }
   }
   &__note {
     line-height: 30px;
@@ -66,8 +72,14 @@
   }
   &__columns {
     display: flex;
+    @include tablets {
+      flex-direction: column;
+    }
   }
   &__socials {
+    @include tablets {
+      margin-bottom: 50px;
+    }
     .socials__item {
       margin-right: 25px;
     }

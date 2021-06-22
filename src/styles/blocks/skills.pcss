@@ -1,5 +1,9 @@
 .skills {
+  width: 100%;
   padding-left: 33%;
+  @include tablets {
+    padding-left: 0;
+  }
   &__row-list {
     display: flex;
     justify-content: space-between;
@@ -9,5 +13,11 @@
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 40px;
+    @include tablets {
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 18px;
+    }
   }
 }

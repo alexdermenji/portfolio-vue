@@ -3,11 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &__socials {
-
-  @include tablets {
-    padding-left: 30%; 
-
+  &__menu {
+    @include tablets {
+      display: none;
+    }
   }
+  &__socials {
+    @include tablets {
+      padding-left: 30%;
+    }
   }
 }
