@@ -1,10 +1,16 @@
 .reviews {
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 0, 50% 10%);
+  padding-top: 150px;
   background: url("~images/bg/budda.jpg") center top / cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  @include tablets {
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 0 0, 50% 5%);
+  }
   @include phones {
     padding-top: 170px;
     padding-bottom: 55px;
+    clip-path: none;
   }
 }

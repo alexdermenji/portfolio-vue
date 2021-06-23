@@ -83,11 +83,6 @@ block content
               p.about__note I made this site as part of my studies at the LoftSchool. I'll refresh my content in it a bit later. In the meantime, look how cool and beautiful everything is here!
  
   .middle 
-    .triangles.triangles__top
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
-        polygon(points="0,0 0,100 1000,100")
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
-        polygon(points="0,100 1000,100 1000,0")  
     section.values
       .container.values__container
         h2.values__title How can I help?
@@ -151,47 +146,43 @@ block content
             .projects__description-text Nice project with modern design. Nice colors, great functionality Nice project with modern design. Nice colors, great functionality
             
             a.iconed-link Visit website
-    .triangles.triangles__bottom
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
-        polygon(points="0,0 0,100 1000,100")
-      svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
-        polygon(points="0,100 1000,100 1000,0")          
+     
   section.reviews 
-      .container 
-        .slider 
-          .slider__header
-            .section-title.slider__title What my clients say
-            .slider__btns
-              button(type='button').slider__btn.round-btn.round-btn--left
-                +icon('arrow-down','round-btn--arrow')
-              button(type='button').slider__btn.round-btn.round-btn--right
-                +icon('arrow-down','round-btn--arrow')
-          ul.slider__content
-            li.slider__item
-              .quote
-                
-                .quote__text 
-                  p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
-                .quote__user 
-                  .client
-                    .client__avatar
-                      .client__avatar-style 
-                        +image('content/review1.jpg', 'client-pic')
-                    .client__data
-                      .client__name Dan Asare 
-                      .client__title Web designer 
-            li.slider__item
-              .quote
-                .quote__text 
-                  p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
-                .quote__user 
-                  .client
-                    .client__avatar
-                      .client__avatar-style 
-                        +image('content/review2.jpg', 'client-pic')
-                    .client__data
-                      .client__name Dan Asare 
-                      .client__title Project manager
+    .container 
+      .slider 
+        .slider__header
+          .section-title.slider__title What my clients say
+          .slider__btns
+            button(type='button').slider__btn.round-btn.round-btn--left
+              +icon('arrow-down','round-btn--arrow')
+            button(type='button').slider__btn.round-btn.round-btn--right
+              +icon('arrow-down','round-btn--arrow')
+        ul.slider__content
+          li.slider__item
+            .quote
+              
+              .quote__text 
+                p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
+              .quote__user 
+                .client
+                  .client__avatar
+                    .client__avatar-style 
+                      +image('content/review1.jpg', 'client-pic')
+                  .client__data
+                    .client__name Dan Asare 
+                    .client__title Web designer 
+          li.slider__item
+            .quote
+              .quote__text 
+                p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
+              .quote__user 
+                .client
+                  .client__avatar
+                    .client__avatar-style 
+                      +image('content/review2.jpg', 'client-pic')
+                  .client__data
+                    .client__name Dan Asare 
+                    .client__title Project manager
   footer.footer 
     .container.footer__container 
       .footer__about   
