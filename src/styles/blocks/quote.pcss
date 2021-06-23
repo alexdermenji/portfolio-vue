@@ -1,4 +1,7 @@
 .quote {
+  @include phones {
+    padding-left: 0;
+  }
   position: relative;
   padding-left: 20%;
   font-weight: 600;
@@ -7,6 +10,9 @@
   &:before {
     @include tablets {
       left: -10px;
+    }
+    @include phones {
+      display: none;
     }
     position: absolute;
     top: 20px;

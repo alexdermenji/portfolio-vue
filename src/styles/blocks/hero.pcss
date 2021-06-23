@@ -20,7 +20,6 @@
       flex-direction: column;
       align-items: center;
       max-width: 50%;
-
     }
   }
   &__description {
@@ -39,7 +38,9 @@
       padding-top: 0;
       text-align: center;
     }
-
+    @include phones {
+      line-height: 19px;
+    }
   }
 
   &__title {
@@ -52,6 +53,11 @@
       text-align: center;
       font-size: 48px;
       flex-basis: 0;
+    }
+
+    @include phones {
+      font-size: 36px;
+      line-height: 48px;
     }
   }
   &__scroll {

@@ -1,4 +1,8 @@
 .skill {
+  @include phones {
+    width: 140px;
+    height: 140px;
+  }
   position: relative;
   width: 166px;
   height: 166px;
@@ -12,6 +16,9 @@
       stroke-width: 12px;
       stroke-dasharray: 251;
       stroke-dashoffset: 5;
+      @include phones {
+        stroke-width: 8px;
+      }
     }
     &-text {
       position: absolute;
@@ -22,6 +29,9 @@
       font-size: 18px;
       color: rgba($text-color, 0.5);
       padding: 14px;
+      @include phones {
+        font-size: 15px;
+      }
     }
   }
 }

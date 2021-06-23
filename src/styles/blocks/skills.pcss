@@ -8,6 +8,9 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+    @include phones {
+      flex-wrap: wrap;
+    }
   }
   &__row-title {
     font-weight: bold;

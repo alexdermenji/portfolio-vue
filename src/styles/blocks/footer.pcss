@@ -7,6 +7,9 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    @include phones {
+      flex-direction: column;
+    }
   }
   &__about {
     width: 20%;
@@ -14,6 +17,10 @@
     flex-direction: column;
     @include tablets {
       width: 25%;
+    }
+
+    @include phones {
+      width: 100%;
     }
   }
   &__year {
@@ -30,15 +37,25 @@
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 18px;
+    @include phones {
+      width: 100%;
+      margin-bottom: 9px;
+    }
   }
   &__title {
     width: 70%;
     font-size: 16px;
     line-height: 30px;
+    @include phones {
+      width: 100%;
+    }
   }
   &__nav {
     width: 75%;
     padding-top: 20px;
+    @include phones {
+      width: 100%;
+    }
   }
   &__menu {
     color: #fff;
@@ -46,6 +63,20 @@
     .menu__link:hover {
       color: #fff;
       border-bottom: 1px solid #fff;
+    }
+    @include phones {
+      .menu__list {
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .menu__item {
+        margin-right: 0;
+        width: 50%;
+        margin-bottom: 22px;
+      }
+      .menu {
+        width: 100%;
+      }
     }
   }
   &__left {
