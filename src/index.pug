@@ -87,102 +87,18 @@ block content
       .container.values__container
         h2.values__title How can I help?
         .values__text I use all modern technologies in my projects. React, Vue, TypeScript I use all modern technologies in my projects. React, Vue, TypeScript I use all modern technologies in my 
-
         .skills
-          ul.skills__list
-            -
-              var skills = [
-                ["Frontend", [
-                  {tech: "HTML5", level: 95}, 
-                  {tech: "CSS3", level: 50},
-                  {tech: "Javascript", level: 60}, 
-                  {tech: "Vue.js", level: 70}]],
-                ["Workflow", [
-                  {tech: "GIT", level: 70}, 
-                  {tech: "Terminal", level: 80}, 
-                  {tech: "Gulp", level: 70}, 
-                  {tech: "Webpack", level: 67}]]
-                ]
-            each item in skills
-              li.skills__item
-                .skills__row
-                  .skills__row-title #{item[0]}
-                  ul.skills__row-list
-                    each skill in item[1]
-                      li.skills__row-item
-                        .skill
-                          svg(viewBox="0 0 100 100").skill__circle-shape
-                            circle(cx="50" cy="50" r="40").skill__circle.skill__circle--under
-                            circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--above
-                            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-                              stop(offset="0%" stop-color="#5500f2")
-                              stop(offset="100%" stop-color="#8f00ef")
-                          .skill__circle-text #{skill.tech}
+          #skills-component
+          
     section.projects
       .container.projects__container
         .projects__title
           .section-title My projects
-        .projects__body
-          .projects__slider(data-slide='2')
-            +image('content/1.jpg', 'projects__pic')
-            .projects__thumbs
-              ul.projects__list
-                  each item in ['1','2','3','4']
-                    li.projects__item
-                      a(href='#').projects__item-link
-                        +image(`content/${item}.jpg`, 'projects__pic')
-            .projects__controls 
-              button(type="button").projects__btns.projects__controls-up
-                +icon('arrow-down','projects__arrow projects__arrow--inactive')
-
-              button(type="button").projects__btns.projects__controls-down
-                +icon('arrow-down','projects__arrow projects__arrow--active')
-          .projects__description 
-            ul.projects__skills-list
-                each item in ['HTML','CSS','JavaScript']
-                  li.projects__skills-item 
-                    .tag #{item}
-            h2.projects__name Website of online school
-            .projects__description-text Nice project with modern design. Nice colors, great functionality Nice project with modern design. Nice colors, great functionality
-            
-            a.iconed-link Visit website
+        #projects-component
      
   section.reviews 
     .container 
-      .slider 
-        .slider__header
-          .section-title.slider__title What my clients say
-          .slider__btns
-            button(type='button').slider__btn.round-btn.round-btn--left
-              +icon('arrow-down','round-btn--arrow')
-            button(type='button').slider__btn.round-btn.round-btn--right
-              +icon('arrow-down','round-btn--arrow')
-        ul.slider__content
-          li.slider__item
-            .quote
-              
-              .quote__text 
-                p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
-              .quote__user 
-                .client
-                  .client__avatar
-                    .client__avatar-style 
-                      +image('content/review1.jpg', 'client-pic')
-                  .client__data
-                    .client__name Dan Asare 
-                    .client__title Web designer 
-          li.slider__item
-            .quote
-              .quote__text 
-                p “As a small business, I need an account manager that I can trust, and who understands my business. Craig knows my business and provides an excellent service. When I phone him, he understands my query straightaway and doesn’t need to look up what my business is before he can answer.” 
-              .quote__user 
-                .client
-                  .client__avatar
-                    .client__avatar-style 
-                      +image('content/review2.jpg', 'client-pic')
-                  .client__data
-                    .client__name Dan Asare 
-                    .client__title Project manager
+      #slider-component
   footer.footer 
     .container.footer__container 
       .footer__about   

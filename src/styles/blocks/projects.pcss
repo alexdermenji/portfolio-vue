@@ -6,9 +6,10 @@
   @include tablets {
     padding-top: 110px;
   }
-
-  &__container {
-    width: 100%;
+  @include phones {
+    &__container {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -80,6 +81,12 @@
     @include phones {
       display: none;
     }
+  }
+
+  &__item--active {
+    border: 2px solid #dc9322;
+    margin-top: -1px;
+    margin-bottom: -1px;
   }
 
   &__item-link {

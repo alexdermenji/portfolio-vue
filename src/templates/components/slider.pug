@@ -1,0 +1,23 @@
+script(type="text/x-template")#slider-container
+  .slider 
+    .slider__header
+      .section-title.slider__title What my clients say
+      .slider__btns
+        button(type='button' @click="slide('prev')").slider__btn.round-btn.round-btn--left
+          +icon('arrow-down','round-btn--arrow')
+        button(type='button' @click="slide('next')").slider__btn.round-btn.round-btn--right
+          +icon('arrow-down','round-btn--arrow')
+    swiper(ref="slider" :options="sliderOptions")
+      swiper-slide(v-for="review in reviews" :key="review.id")
+        .quote
+          .quote__text 
+            p {{review.text}}
+          .quote__user 
+            .client
+              .client__avatar
+                .client__avatar-style 
+                  img(:src="review.pic").client-pic
+              .client__data
+                .client__name {{review.name}} 
+                .client__title {{review.occ}} 
+      

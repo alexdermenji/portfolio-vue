@@ -1,0 +1,57 @@
+script(type="text/x-template")#preview-container
+  .projects__body
+    display(
+      :currentWork = "currentWork"
+      :works="works" 
+      @slide="slide"
+      :currentIndex ="currentIndex"
+      )
+    info(:currentWork = "currentWork")
+
+script(type="text/x-template")#preview-display
+  .projects__slider(:data-slide='currentIndex + 1')
+    img(:src="currentWork.photo").projects__pic
+    .projects__thumbs
+      thumbs(
+        :works = "reversedWorks",
+        :currentWork ="currentWork"
+      )
+      btns(
+        @slide="$emit('slide', $event)"
+        ) 
+    
+script(type="text/x-template")#preview-thumbs
+  ul.projects__list
+    li.projects__item(
+      v-for="slide in works" 
+      :key = "slide.id" 
+      :class="{'projects__item--active': currentWork.id === slide.id}"
+      )
+      button.projects__item-link
+        img(:src="slide.photo").projects__pic
+
+
+script(type="text/x-template")#preview-btns
+  .projects__controls
+    button.projects__btns.projects__controls-up(
+      type="button" 
+      @click="$emit('slide','next')"
+      )
+      +icon('arrow-down','projects__arrow projects__arrow--inactive')
+    button.projects__btns.projects__controls-down(
+      type="button"
+      @click="$emit('slide','prev')"
+      )
+      +icon('arrow-down','projects__arrow projects__arrow--active')
+
+script(type="text/x-template")#preview-info
+  .projects__description 
+    tags(:tags = "tagsArray")
+    h2.projects__name {{currentWork.title}}
+    .projects__description-text {{currentWork.desc}}
+    a(:href="currentWork.link" target="_blank").iconed-link Visit website
+
+script(type="text/x-template")#preview-tags
+  ul.projects__skills-list
+    li.projects__skills-item(v-for="tag in tags") 
+      .tag {{tag}}

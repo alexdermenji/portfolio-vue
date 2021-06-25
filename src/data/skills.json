@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "category": "Frontend",
+    "skills": [
+      { "id": 1, "title": "HTML", "percent": 12 },
+      { "id": 2, "title": "CSS", "percent": 42 },
+      { "id": 3, "title": "JavaScript", "percent": 52 },
+      { "id": 4, "title": "Vue", "percent": 92 }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "WorkFlow",
+    "skills": [
+      { "id": 1, "title": "HTML", "percent": 32 },
+      { "id": 2, "title": "CSS", "percent": 42 },
+      { "id": 3, "title": "JavaScript", "percent": 52 },
+      { "id": 4, "title": "Vue", "percent": 62 }
+    ]
+  }
+]

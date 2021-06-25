@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Website of online School",
+    "skills": "HTML, CSS, JavaScript",
+    "photo": "1.jpg",
+    "link": "http://google.com",
+    "desc": "Nice project with modern design. Nice colors, great functionality. Clean code, beatufull design, informative content"
+  },
+  {
+    "id": 2,
+    "title": "Food delivery web app",
+    "skills": "HTML, CSS, JavaScript, React",
+    "photo": "2.jpg",
+    "link": "http://google.com",
+    "desc": "Nice project with modern design. Nice colors, great functionality. Clean code, beatufull design, informative content"
+  },
+  {
+    "id": 3,
+    "title": "Online bank web app",
+    "skills": "HTML, CSS, JavaScript, Vue",
+    "photo": "3.jpg",
+    "link": "http://google.com",
+    "desc": "Nice project with modern design. Nice colors, great functionality. Clean code, beatufull design, informative content"
+  }
+]
