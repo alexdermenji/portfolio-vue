@@ -12,7 +12,13 @@ new Vue({
     return {
       reviews: [],
       sliderOptions: {
-        slidesPerView: 2,
+        slidesPerView: 1,
+        loop: true,
+        breakpoints: {
+          480: {
+            slidesPerView: 2,
+          },
+        },
       },
     };
   },

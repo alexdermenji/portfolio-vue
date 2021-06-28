@@ -7,8 +7,8 @@ script(type="text/x-template")#slider-container
           +icon('arrow-down','round-btn--arrow')
         button(type='button' @click="slide('next')").slider__btn.round-btn.round-btn--right
           +icon('arrow-down','round-btn--arrow')
-    swiper(ref="slider" :options="sliderOptions")
-      swiper-slide(v-for="review in reviews" :key="review.id")
+    swiper(ref="slider" :options="sliderOptions").slider__content
+      swiper-slide(v-for="review in reviews" :key="review.id").slider__item
         .quote
           .quote__text 
             p {{review.text}}

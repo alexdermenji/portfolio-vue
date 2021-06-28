@@ -26,14 +26,14 @@
     display: flex;
   }
   &__content {
-    display: flex;
-    padding-right: 12%;
+    overflow: hidden;
     @include tablets {
       padding-right: 0;
     }
-    @include phones {
-      overflow: hidden;
-    }
+  }
+
+  &__content > div {
+    display: inline-flex;
   }
   &__title {
     margin-right: 113px;
@@ -48,12 +48,7 @@
   }
   &__item {
     @include phones {
-      min-width: 100%;
-      margin-right: 0;
-    }
-    width: 50%;
-    margin-right: 50px;
-    &:last-child {
+      width: 100%;
       margin-right: 0;
     }
   }
