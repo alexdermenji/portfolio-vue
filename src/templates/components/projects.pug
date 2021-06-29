@@ -11,24 +11,24 @@ script(type="text/x-template")#preview-container
 script(type="text/x-template")#preview-display
   .projects__slider(:data-slide='currentIndex + 1')
     img(:src="currentWork.photo").projects__pic
-    .projects__thumbs
-      thumbs(
-        :works = "reversedWorks",
-        :currentWork ="currentWork"
-      )
-      btns(
-        @slide="$emit('slide', $event)"
-        ) 
+    thumbs(
+      :works = "reversedWorks",
+      :currentWork ="currentWork"
+    )
+    btns(
+      @slide="$emit('slide', $event)"
+      ) 
     
 script(type="text/x-template")#preview-thumbs
-  ul.projects__list
-    li.projects__item(
-      v-for="slide in works" 
-      :key = "slide.id" 
-      :class="{'projects__item--active': currentWork.id === slide.id}"
-      )
-      button.projects__item-link
-        img(:src="slide.photo").projects__pic
+  .projects__thumbs
+    ul.projects__list
+      li.projects__item(
+        v-for="slide in works" 
+        :key = "slide.id" 
+        :class="{'projects__item--active': currentWork.id === slide.id}"
+        )
+        button.projects__item-link
+          img(:src="slide.photo").projects__pic
 
 
 script(type="text/x-template")#preview-btns
