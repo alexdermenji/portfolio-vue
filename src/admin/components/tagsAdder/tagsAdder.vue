@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     tagsArray() {
-      return this.currentTags.trim().split(", ");
+      return this.currentTags.trim().split(",");
     },
   },
   props: {
