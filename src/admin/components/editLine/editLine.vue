@@ -52,6 +52,10 @@ export default {
   },
   methods: {
     onApprove() {
+      if (this.value.trim() === "") {
+        this.errorText = "Field is empty";
+      }
+
       if (this.title.trim() === this.value.trim()) {
         this.editmode = false;
       } else {

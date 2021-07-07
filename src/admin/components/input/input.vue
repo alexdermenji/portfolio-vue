@@ -5,7 +5,7 @@
     :class="[
       { input_labeled: !!title, 'no-side-paddings': noSidePaddings },
       iconClass,
-      { error: !!errorMessage },
+      { error: !!errorText && !inputValue },
     ]"
   >
     <div class="title" v-if="title">{{ title }}</div>
@@ -15,9 +15,10 @@
       v-bind="$attrs"
       :value="value"
       @input="$emit('input', $event.target.value)"
+      v-model="inputValue"
     />
     <div class="input__error-tooltip">
-      <tooltip :text="errorMessage"></tooltip>
+      <tooltip :text="errorText"> </tooltip>
     </div>
   </label>
   <label
@@ -43,10 +44,15 @@
 import { Validator } from "simple-vue-validator";
 
 export default {
+  data() {
+    return {
+      inputValue: this.value,
+    };
+  },
   mixins: [require("simple-vue-validator").mixin],
   validators: {
     value(value) {
-      return Validator.value(value).required("Field is empty");
+      return Validator.value(value).required(this.errorText);
     },
   },
   inheritAttrs: false,
@@ -55,7 +61,7 @@ export default {
       type: String,
       default: "",
     },
-    errorMessage: {
+    errorText: {
       type: String,
       default: "",
     },

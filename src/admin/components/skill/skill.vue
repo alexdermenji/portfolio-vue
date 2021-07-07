@@ -15,10 +15,15 @@
 
   <div class="skill-component" v-else>
     <div class="title">
-      <app-input noSidePaddings v-model="currentSkill.title" />
+      <app-input
+        noSidePaddings
+        :errorText="errorTextTitle"
+        v-model="currentSkill.title"
+      />
     </div>
     <div class="percent">
       <app-input
+        :errorText="errorTextPercent"
         v-model="currentSkill.percent"
         type="number"
         min="0"
@@ -27,7 +32,7 @@
       />
     </div>
     <div class="buttons">
-      <icon symbol="tick" class="btn" @click="$emit('approve', currentSkill)" />
+      <icon symbol="tick" class="btn" @click="onApprove" />
       <icon symbol="cross" class="btn" @click="editmode = false" />
     </div>
   </div>
@@ -47,12 +52,28 @@ export default {
   data() {
     return {
       editmode: false,
+      errorTextTitle: "",
+      errorTextPercent: "",
       currentSkill: {
         id: 0,
         title: this.skill.title,
         percent: this.skill.percent,
       },
     };
+  },
+  methods: {
+    onApprove() {
+      if (this.currentSkill.title.trim() === "") {
+        this.errorTextTitle = "Please fill the field";
+      }
+      if (this.currentSkill.percent.trim() === "") {
+        this.errorTextPercent = "nothing in the field";
+      }
+
+      // if (this.value.trim() === "") {
+      //   this.errorText = "Field is empty";
+      // }
+    },
   },
   components: {
     icon,
