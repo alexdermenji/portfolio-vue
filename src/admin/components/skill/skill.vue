@@ -69,10 +69,6 @@ export default {
       if (this.currentSkill.percent.trim() === "") {
         this.errorTextPercent = "nothing in the field";
       }
-
-      // if (this.value.trim() === "") {
-      //   this.errorText = "Field is empty";
-      // }
     },
   },
   components: {
