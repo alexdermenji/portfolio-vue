@@ -24,6 +24,9 @@
             <category
               :title="category.category"
               :skills="category.skills"
+              @create-skill="createSkill($event, category.id)"
+              @edit-skill="editSkill"
+              @remove-skill="removeSkill"
             ></category>
           </li>
         </ul>
@@ -34,13 +37,16 @@
 
 <script>
 import user from "../../components/user";
-import iconedButton from "../../components/button";
+import button from "../../components/button";
 import category from "../../components/category";
 import { mapActions, mapState } from "vuex";
 export default {
+  components: {
+    iconedButton: button,
+    category,
+  },
   data() {
     return {
-      // categories: [],
       emptyCatIsShown: false,
     };
   },
@@ -49,28 +55,41 @@ export default {
       categories: (state) => state.data,
     }),
   },
-  created() {
-    this.categories = require("../../data/categories.json");
-  },
-  components: {
-    user,
-    iconedButton,
-    category,
-  },
   methods: {
-    createCategory(categoryTitle) {
+    ...mapActions({
+      createCategoryAction: "categories/create",
+      fetchCategoriesAction: "categories/fetch",
+      addSkillAction: "skills/add",
+      removeSkillAction: "skills/remove",
+      editSkillAction: "skills/edit",
+    }),
+    async createSkill(skill, categoryId) {
+      const newSkill = {
+        ...skill,
+        category: categoryId,
+      };
+      await this.addSkillAction(newSkill);
+      skill.title = "";
+      skill.percent = "";
+    },
+    removeSkill(skill) {
+      this.removeSkillAction(skill);
+    },
+    async editSkill(skill) {
+      await this.editSkillAction(skill);
+      skill.editmode = false;
+    },
+    async createCategory(categoryTitle) {
       try {
-        this.createCategoryAction(categoryTitle);
+        await this.createCategoryAction(categoryTitle);
         this.emptyCatIsShown = false;
       } catch (error) {
         console.log(error.message);
       }
     },
-
-    ...mapActions({
-      createCategoryAction: "categories/create",
-      fetchCategoryAction: "categories/fetch",
-    }),
+  },
+  created() {
+    this.fetchCategoriesAction();
   },
 };
 </script>

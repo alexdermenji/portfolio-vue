@@ -33,6 +33,7 @@ import appInput from "../../components/input";
 import appButton from "../../components/button";
 import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
 import $axios from "../../requests";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -46,6 +47,9 @@ export default {
   },
   components: { appButton, appInput },
   methods: {
+    ...mapActions({
+      showTooltip: "tooltips/show",
+    }),
     handleSubmit() {
       // this.$validate().then((isValid) => {
       //   if (isValid === false) return;
@@ -60,7 +64,10 @@ export default {
           console.log(token);
         })
         .catch((error) => {
-          console.log(error.response.data.error);
+          this.showTooltip({
+            text: error.response.data.error,
+            type: "error",
+          });
         })
         .finally(() => {
           this.isSubmitDisabled = false;

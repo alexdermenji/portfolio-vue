@@ -3,18 +3,18 @@
     <div class="title">
       <app-input
         placeholder="Новый навык"
-        :errorText="textInputError"
-        v-model="skill"
+        :errorText="validation.firstError('skill.title')"
+        v-model="skill.title"
       />
     </div>
     <div class="percent">
       <app-input
-        v-model="percent"
+        v-model="skill.percent"
         type="number"
         min="0"
         max="100"
         maxlength="3"
-        :errorText="percentInputError"
+        :errorText="validation.firstError('skill.title')"
       />
     </div>
     <div class="button">
@@ -26,11 +26,15 @@
 <script>
 import input from "../input";
 import button from "../button";
+import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
 export default {
   data() {
     return {
-      skill: "",
-      percent: "",
+      skill: {
+        title: "",
+        percent: "",
+      },
+
       textInputError: "",
       percentInputError: "",
     };
@@ -43,14 +47,22 @@ export default {
     appInput: input,
     roundButton: button,
   },
+  mixins: [ValidatorMixin],
+  validators: {
+    "skill.title": (value) => {
+      return Validator.value(value).required("Не может быть пустым");
+    },
+    "skill.percent": (value) => {
+      return Validator.value(value)
+        .integer("Должно быть числом")
+        .between(0, 100, "Некорректное значение")
+        .required("Не может быть пустым");
+    },
+  },
   methods: {
     onApprove() {
-      if (this.skill.trim() === "") {
-        this.textInputError = "Field is empty";
-      }
-      if (this.percent.trim() === "") {
-        this.percentInputError = "Field is empty";
-      }
+      if (this.$validate() === false) return;
+      this.$emit("approve", this.skill);
     },
   },
 };
